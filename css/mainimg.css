@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+
+/*メイン画像
+---------------------------------------------------------------------------*/
+#mainimg {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+/*３枚の画像の共通設定*/
+.slide {
+	width: 100%;height: 100%;
+	position: absolute;right: 0px;top: 0px;
+	display: flex;
+	align-items: center;
+	opacity: 0;
+	transition: opacity 1s;	/*ここの1s（＝1秒）を変更すると、フェードのスピードを変更できます。*/
+}
+
+/*１枚目画像*/
+.slide1 {
+	background: url('../images/1-yoko.jpg') no-repeat center center / cover;	/*１枚目の背景画像の読み込み*/
+}
+
+/*２枚目画像*/
+.slide2 {
+	background: url('../images/2-yoko.jpg') no-repeat center center / cover;	/*２枚目の背景画像の読み込み*/
+}
+
+/*３枚目画像*/
+.slide3 {
+	background: url('../images/3-yoko.jpg') no-repeat center center / cover;	/*３枚目の背景画像の読み込み*/
+}
+
+
+	/*端末を縦向きにした際に、読み込む画像を変更したい場合はここで指定します*/
+	@media (orientation: portrait) {
+	
+	/*１枚目画像*/
+	.slide1 {
+		background-image: url('../images/1-tate.jpg');	/*縦向き専用の画像をここで設定します*/
+	}
+
+	/*2枚目画像*/
+	.slide2 {
+		background-image: url('../images/2-tate.jpg');	/*縦向き専用の画像をここで設定します*/
+	}
+
+	/*3枚目画像*/
+	.slide3 {
+		background-image: url('../images/3-tate.jpg');	/*縦向き専用の画像をここで設定します*/
+	}
+
+	}/*追加指定ここまで*/
